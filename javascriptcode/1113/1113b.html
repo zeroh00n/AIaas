@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script> //react에서 자주 사용되는 문법
+    function f1({name, age, gender}){
+        document.writeln(`${name}, ${age}, ${gender} <br>`);
+    }
+    let user={name:'John', age:23};
+
+     //spread operator ...user로 키와 값을 뽑아냄
+    let user1 = {...user, gender:"male"};
+    f1(user1);
+
+    //3항 연산자
+    let str = prompt("cat or dog");
+    document.writeln((str == "dog")? "hi dog" : "hi cat");
+
+    //화살표 함수
+    let f2 =({name, gender}) => {
+        document.writeln(`<br>${name}, ${gender}`);
+    }
+    f2(user1);
+
+    //litral string   let f3 = async()=>{} 가능
+    let f3 =({name, age}) =>{
+        let person =`<br>name : ${name}, age : ${age}<br>`;
+        document.writeln(person);
+    }
+    f3(user1);
+
+    //if문 대신 참 일때만 값 뽑아오기
+    let message = "hi";
+    document.writeln((2>1 && 100));
+    document.writeln(message.length>0 && "<p>메세지 있음<p>"); 
+
+    //async
+
+    //.map함수 (react에서 while 대용)
+    let arr = [
+        {name:'john', age:25},
+        {name:'jane', age:27},
+        {name:'jason', age:24}
+    ];
+    arr.map((person) => {
+        document.writeln(`<br>${person.name}, ${person.age}`);
+    });
+    document.writeln("<br>");
+
+    //.filter 함수
+    let arr1 = [1, 2, 3, 4, 5, 6];
+    let arr2 = arr1.filter(x => x%2 ==0);
+    arr2.map(x => document.writeln(`<br>${x}`)); //for문 대신 사용 가능
+</script>
+</html>

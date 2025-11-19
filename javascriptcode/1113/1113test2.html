@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {border-collapse: collapse;}
+    th, td{border: 1px solid black;}
+</style>
+<body>
+    
+</body>
+<script>
+    let arr =[];
+    let text = ["이름", "성별", "전화번호"];
+    while(true){
+        let i = 0;
+        const obj ={name: null, age:null, tel:null};
+        obj[i] = prompt(text[i] +"을(를) 입력하세요");
+        i++;
+        if(obj[0] === '' || obj[0] ===null){break;}
+        for(i = 1; i < 3; i++){
+            obj[i] = prompt(text[i] +"을(를) 입력하세요");
+        }
+        arr.push(obj);
+    }
+
+    const info = (arr.map((person) => {
+        `<tr><td>${person[0]}</td><td>${person[1]}</td><td>${person[2]}</td></tr>`;
+    })).join('');
+    document.writeln(`<table><tr><th>이름</th><th>성별</th><th>전화번호</th></tr>${info}</table>`);
+
+</script>
+</html>

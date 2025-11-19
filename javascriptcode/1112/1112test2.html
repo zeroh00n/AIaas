@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = new Array(3).fill(0);
+    for(let i in arr){
+        arr[i] = parseInt(prompt("정수 입력 ㄱㄱ"));
+    }
+    document.writeln("a : " + arr[0] + " b : " + arr[1] + " c : " + arr[2] + "<br>")
+    document.writeln(formula1(arr))
+
+    function formula1(arr){
+        let num1 =(arr[1]*arr[1])-(4*arr[0]*arr[2]);
+        let result1, result2
+        if(num1 < 0){
+            return "이거 근의 공식 못 구함"
+        } else{
+            result1 = (-arr[1] + Math.sqrt(num1))/2*arr[0]
+            result2 = (-arr[1] - Math.sqrt(num1))/2*arr[0]
+            return "값1 = " + result1 + "<br> 값2 = " + result2;
+        }
+    }
+</script>
+</html>

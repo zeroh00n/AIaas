@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let i = 2;
+    while(i<10){
+        doStep(i);
+        document.body.appendChild(document.createElement("hr"));
+        i++;
+    }
+
+    function doStep(x){ //메모리 설명함
+        let j = 1;
+        while(j < 10){
+            document.writeln(doPrint(x, j))
+            j++;
+        }
+    }
+
+    function doPrint(a, b){
+        let str = a + " x " + b + " = " + a*b +"<br>"
+        return str;
+    }
+</script>
+</html>

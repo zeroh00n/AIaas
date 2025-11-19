@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let student = new Array(5).fill(0);
+
+    for(let i in student){ //index순회, in 사용시 값 초기화 해줘야 사용 가능
+        student[i] = parseInt(prompt("정수 입력 ㄱㄱ"))
+    }
+
+    let total = 0
+
+    for(let x of student){ //value순회
+        total += x;
+    }
+
+    document.writeln(total/student.length)
+</script>
+</html>

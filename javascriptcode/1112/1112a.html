@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let dayday = new Date();
+    dayday.setDate((dayday.getDate()+1000));
+    let year1 = dayday.getFullYear();
+    let month1 = dayday.getMonth();
+    let day1 = dayday.getDate();
+    document.writeln(year1 + "년 " + (month1+1) + "월 " + day1 + "일 입니다. <br>")   ; 
+    document.writeln("<br><br><br>");
+
+    let toDay = new Date();
+    document.writeln(toDay + "<br>");
+    document.writeln(new Date() + "<br>");
+
+    //년월일 따로 받아와 한국식 표기법으로 바꾸기
+    let year = toDay.getFullYear();
+    let month = toDay.getMonth();
+    let day = toDay.getDate();
+
+    document.writeln(year + "년 " + (month+1) + "월 " + day + "일 입니다. <br>")
+
+    let someday = new Date(2026, 4, 11);
+    document.writeln(someday.getFullYear() + "년 " + (someday.getMonth()) + "월 " + someday.getDate() + "일 입니다.")
+</script>
+</html>
