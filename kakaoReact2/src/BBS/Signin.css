@@ -1,0 +1,71 @@
+.signin-container {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: "Pretendard", sans-serif;
+  background: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.signin-container h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #212529;
+}
+
+.signin-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signin-container input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+
+.signin-container input:focus {
+  outline: none;
+  border-color: #22b8cf;
+  box-shadow: 0 0 0 2px rgba(34, 184, 207, 0.2);
+}
+
+.signin-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.signin-buttons button,
+.signin-buttons .write-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  background: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.signin-buttons button:hover,
+.signin-buttons .write-btn:hover {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+}
+
+.signin-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signin-footer .write-btn {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #343a40;
+}

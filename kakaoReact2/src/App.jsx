@@ -1,28 +1,22 @@
 import './App.css'
 import {Routes, Route} from 'react-router-dom';
-import Home from './Pages/Home.jsx';
-import About from './Pages/About.jsx';
-import Profile from './Pages/Profile.jsx';
-import Person from './Pages/Person'
-import Article from './Pages/Article.jsx';
-import Articles from './Pages/Articles.jsx';
-import Nav from './Pages/Nav.jsx';
-import Layout from './Layout.jsx';
+import Home from './BBS/Home.jsx';
+import Signup from './BBS/Signup.jsx';
+import Signin from './BBS/Signin.jsx';
+import Write from './BBS/Write.jsx';
+import View from './BBS/View.jsx';
+
 
 function App() {
   return (
 
-      <Routes>
-        <Route element={<Layout/>}>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/profiles/:username" element={<Profile />}/>
-          <Route path="/person" element={<Person />}/>
-          <Route path="/" element={<Home/>}/>
-        </Route>
-        <Route path="/articles" element={<Articles />}>
-          <Route path=":id" element={<Article />}/> 
-        </Route>
-      </Routes>
+        <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/signin" element={<Signin />}/>
+            <Route path="/signup" element={<Signup/>}/>
+            <Route path='/write' element={<Write />}/>
+            <Route path='/view' element={<View/>}/>
+        </Routes>
   )
 }
 

@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-function LogIn() {
+function Signup() {
     const [info, setInfo] = useState({
         id:'',
-        ps:'',
-        psre:'',
+        pw:'',
+        pwre:'',
         gender:'',
         tel:'',
         region:'',
@@ -37,8 +37,8 @@ function LogIn() {
     const resetInfo = () =>{
         setInfo({
             id:'',
-            ps:'',
-            psre:'',
+            pw:'',
+            pwre:'',
             gender:'',
             tel:'',
             region:'',
@@ -49,8 +49,8 @@ function LogIn() {
     return(
         <div>
             아이디 <input type="text" name ='id' value={info.id} onChange={doChange}/><br/>
-            비밀번호 <input type="password" name = 'ps'value={info.ps} onChange={doChange}/><br/>
-            비밀번호 확인 <input type="password" name = 'psre' value={info.psre} onChange={doChange}/><br/>
+            비밀번호 <input type="password" name = 'pw'value={info.pw} onChange={doChange}/><br/>
+            비밀번호 확인 <input type="password" name = 'pwre' value={info.pwre} onChange={doChange}/><br/>
             성별 <input type= "radio" name="gender" value="male" checked={info.gender=="male"}
              onChange={e=>doChange(e)}/>남성
              <input type= "radio" name="gender" value="female" checked={info.gender=="female"}
@@ -72,8 +72,8 @@ function LogIn() {
             <button onClick={resetInfo}>비우기</button><br/><br/>
 
             <div>아이디: {info.id}</div>
-            <div>비밀번호: {info.ps}</div>
-            <div>비밀번호 확인: {info.psre}</div>
+            <div>비밀번호: {info.pw}</div>
+            <div>비밀번호 확인: {info.pwre}</div>
             <div>성별: {info.gender}</div>
             <div>번호: {info.tel}</div>
             <div>지역: {info.region}</div>
@@ -83,4 +83,4 @@ function LogIn() {
         </div>
     )
 }
-export default LogIn;
+export default Signup;
