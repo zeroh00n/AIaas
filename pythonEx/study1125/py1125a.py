@@ -3,5 +3,3 @@ for x in range(2, 10 , 1):
         print(f"{x} x {y} = {x*y} ")
     
     print("-"*10)
-
-    print(48*72/24)

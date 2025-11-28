@@ -5,4 +5,4 @@ def plus(N):
         return N + plus(N-1);
 
 
-print(plus(100))
+print(plus(100));

@@ -6,7 +6,7 @@ mabang = [[0]*n for _ in range(n)];
 i = len(mabang)-1;
 j = len(mabang[i])//2;
 
-for num in range(1, (n**2)+1):
+for num in range(1, n*n + 1):
     if num == 1:
         mabang[i][j] = num;
     else:
@@ -43,7 +43,7 @@ for num in range(1, (n**2)+1):
                 j = 0;
                 mabang[i][j] =num;
             else:
-                 if i-1>=0:
+                 if i-1>0:
                     i -= 1;
                     mabang[i][j] =num;
 

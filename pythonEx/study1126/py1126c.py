@@ -21,7 +21,7 @@ with open('student.txt', 'r') as f:
     line = f.read();
     print(line); #with를 사용하면 f.close()를 할 필요 없이 알아서 끝남
 
-f=open('student.txt', 'w');
+f=open('student.txt', 'a'); #f=open('student.txt', 'w');면 123밖에 안남음
 line=input('아무거나 입력: ');
-f.write(line)
-f.close()
+f.write(line);
+f.close();
