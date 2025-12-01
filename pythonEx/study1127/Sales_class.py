@@ -26,6 +26,6 @@ class Sales:
         n = 1
         for name, price, result, tel, nowStr in self.historyList:
             sum += result;
-            print(f'{n}. {name} {price} {result} {tel} {nowStr}\n');
+            print(f'{n}. {name} {price} {result} {tel} {nowStr}');
             n+=1;
         print(f'총 매출액:{sum}')
