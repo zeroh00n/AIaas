@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Auto Refresh Google</title>
+
+  <script>
+    // 5분(300,000ms) 마다 google.com으로 이동
+    function autoRefresh() {
+      window.location.href = "https://cafe.naver.com/jpnstory";
+    }
+
+    // 페이지 열리자마자 실행
+    autoRefresh();
+
+    // 5분마다 반복 실행
+    setInterval(autoRefresh, 300000);
+  </script>
+</head>
+<body>
+  <h2>5분마다 Google.com 자동 새로고침 중...</h2>
+  <p>이 페이지는 5분마다 google.com 으로 자동 이동합니다.</p>
+</body>
+</html>

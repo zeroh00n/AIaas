@@ -21,6 +21,14 @@ app.add_middleware(
 )
 Base.metadata.create_all(bind=engine)
 
+@app.post("/user/{name}/{gender}/{mobile}")
+async def insert(name: str, gender: str, mobile: str,db:Session = Depends(get_db)):
+  user = User(name=name,gender=gender,mobile=mobile)
+  db.add(user)
+  db.commit()
+  db.refresh(user)
+  return {"message": "ok"}
+
 @app.get("/user")
 async def getList(db:Session = Depends(get_db)):
   users = db.query(User).all()
@@ -30,14 +38,6 @@ async def getList(db:Session = Depends(get_db)):
 async def getOne(id:int, db:Session = Depends(get_db)):
   user = db.query(User).filter(User.id == id).first()
   return user # {id:xxx,name:'xxxx',gender:'....',mobile:'....'}
-
-@app.post("/user/{name}/{gender}/{mobile}")
-async def insert(name: str, gender: str, mobile: str,db:Session = Depends(get_db)):
-  user = User(name=name,gender=gender,mobile=mobile)
-  db.add(user)
-  db.commit()
-  db.refresh(user)
-  return {"message": "ok"}
 
 @app.put("/user/{id}/{name}/{gender}/{mobile}")
 async def update(id:  int, name: str, gender: str, mobile: str, db:Session = Depends(get_db)):
