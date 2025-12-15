@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <Ex1></Ex1>
+      <Ex1/>
     </>
   )
 }

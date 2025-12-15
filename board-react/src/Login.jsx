@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import { useGloval } from './store';
 
 
 export default function Login() {
     const [user, setUser] = useState({loginid: '', password: ''});
     const navigate = useNavigate();
+    const {userid, setUserid} = useGloval()
 
     const doChange = (e) => {
         const {name, value} = e.target;
@@ -18,6 +20,7 @@ export default function Login() {
             console.log("이번에 받은 res =", res);
             console.log("이번에 받은 res.data =", res.data);
             if(res.data.result === 'success'){
+                setUserid(user.loginid)
                 navigate('/');
             }else{
                 alert(res.data.message || 'Login failed');

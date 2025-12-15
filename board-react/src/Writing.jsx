@@ -1,12 +1,14 @@
 import { useState} from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import { useGloval } from "./store";
 
 export default function Writing() {
-    const initValue = {title: '', content: ''};
+    const userid = useGloval(x=>x.userid)
+    const initValue = {title: '', content: '', writer:userid};
     const navigate = useNavigate();
     const [write, setWrite] = useState(initValue);
-
+    
     const doChange = (e) => {
         const {name, value} = e.target;
         setWrite(prev => ({...prev, [name]: value}));
@@ -29,15 +31,35 @@ export default function Writing() {
         setWrite(initValue);
         navigate('/');
     }
+    const tds = {textAlign:"left"}
 
     return (
         <>
-            title <input type="text" name = "title" onChange={doChange} value ={write.title}/>
-            content <input type="text" name = "content" onChange={doChange} value ={write.content}/>
-            <div>
-                <button onClick={doWrite}>write</button>
-                <button onClick={doCancel}>cancel</button>
-            </div>
+        <style>
+            {`
+                td {border:1px solid grey}
+                table {margin:0 auto, borderCollapse:collapse}
+            `}
+        </style>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Title</td><td style={tds}><input type="text" name = "title" onChange={doChange} value ={write.title}/></td>
+                    </tr>
+                    <tr>
+                        <td>content</td><td style={tds}><textarea name = "content" onChange={doChange} rows={10} cols={50}>{write.content}</textarea></td>
+                    </tr>
+                    <tr>
+                        <td>writer</td><td style={tds}>{userid}</td>
+                    </tr>
+                    <tr>
+                        <td colSpan={2} style={{textAlign:'center'}}>
+                            <button onClick={doWrite}>write</button>
+                            <button onClick={doCancel}>cancel</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </>
     )
 }
